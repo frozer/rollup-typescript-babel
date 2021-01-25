@@ -14,7 +14,7 @@ export default {
 
   // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
   // https://rollupjs.org/guide/en/#external
-  external: [],
+  external: [/@babel\/runtime/],
 
   plugins: [
     // Allows node_modules resolution
@@ -26,7 +26,7 @@ export default {
     // Compile TypeScript/JavaScript files
     babel({
       extensions,
-      babelHelpers: 'bundled',
+      babelHelpers: 'runtime',
       include: ['src/**/*'],
     }),
   ],
